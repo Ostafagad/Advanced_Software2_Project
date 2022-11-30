@@ -1,7 +1,6 @@
-package com.company;
 
-public class Account {
-    private String user_name;
+/*public class Account {
+	private String user_name;
     private String password;
     private String email;
    public SignUp signUp;
@@ -20,7 +19,7 @@ public class Account {
     }
 
     public void setPassword(String password) {
-        password = password;
+        this.password = password;
     }
 
     public void setUser_name(String user_name) {
@@ -41,3 +40,5 @@ public class Account {
 
 
 }
+
+*/

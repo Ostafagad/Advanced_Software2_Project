@@ -1,7 +1,6 @@
-package com.company;
 
-public class Signin{
-    private String user_name;
+public class Signin {
+	private String user_name;
     private String password;
 
     public Signin()
@@ -18,7 +17,7 @@ public class Signin{
     {
         // should validate user data from data base
     }
-
+   
     public void setPassword(String password) {
         this.password = password;
     }
@@ -35,4 +34,6 @@ public class Signin{
         return password;
     }
 }
+
+
 
