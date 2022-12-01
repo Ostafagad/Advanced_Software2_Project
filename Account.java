@@ -1,16 +1,25 @@
+package Advanced_Software2_Project;
 
-/*public class Account {
-	private String user_name;
+
+
+import java.util.ArrayList;
+
+public class Account {
+    private String user_name;
     private String password;
     private String email;
-   public SignUp signUp;
 
 //
-    public Account(SignUp s)
+    public Account()
     {
-        this.user_name=s.getUser_name();
-        this.password=s.getPassword();
-        this.email=s.getEmail();
+    // this.accounts = new ArrayList<Account>();
+
+    }
+    public void addAccount(String name,String pass,String email)
+    {
+        this.user_name=name;
+        this.email=email;
+        this.password=pass;
     }
 
     public void setEmail(String email) {
@@ -19,7 +28,7 @@
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        password = password;
     }
 
     public void setUser_name(String user_name) {
@@ -41,4 +50,3 @@
 
 }
 
-*/
