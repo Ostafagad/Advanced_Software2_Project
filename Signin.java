@@ -1,39 +1,37 @@
+package Advanced_Software2_Project;
 
-public class Signin {
-	private String user_name;
-    private String password;
+public class Signin{
+//  private String user_name;
+//  private String password;
+private Account account;
+  private DataBase arr;
+  public Signin(Account a,DataBase c)
+  {
+      this.account=a;
+      this.arr=c;
 
-    public Signin()
-    {
 
-    }
-    public Signin(String name,String pass)
-    {
-        this.password=pass;
-        this.user_name=name;
-    }
+  }
+  public void signin(String name,String pass)
+  {
+      if(validate_date(name,pass))
+          System.out.println("welcome");
+      else
+          System.out.println("Sorry, you entered invalid data");
+  }
 
-    public void validate_date(String name,String pass)
-    {
-        // should validate user data from data base
-    }
-   
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public boolean validate_date(String name,String pass)
+  {
+      boolean flag=false;
+      for (int i=0;i<arr.accounts.size();i++)
+      {
+          if(name==arr.accounts.get(i).getUser_name() &&pass==arr.accounts.get(i).getPassword() ) {
+              flag = true;
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
-    }
+          }
+      }
+      return  flag;
+  }
 
-    public String getUser_name() {
-        return user_name;
-    }
 
-    public String getPassword() {
-        return password;
-    }
 }
-
-
-
