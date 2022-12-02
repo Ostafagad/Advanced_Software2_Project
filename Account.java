@@ -27,7 +27,7 @@ public class Account {
     }
 
     public void setPassword(String password) {
-        password = password;
+        this.password = password;
     }
 
     public void setUser_name(String user_name) {

@@ -4,7 +4,7 @@ public class OverAllDiscount extends DiscountDecorator {
 	Service service;
 	public OverAllDiscount(Service service){
 		this.service= service;
-		this.discount=0.1;
+		this.discount=.1;
 	}
 	
 	public double cost() {
