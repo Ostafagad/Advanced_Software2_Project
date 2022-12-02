@@ -20,10 +20,12 @@ public class Main {
     	Service service=new mobileRechargeService();
     	ProviderCreator obj=new VodafoneCreator();
     	obj.creatProvider();
-    	Admin admin=new Admin();
-    	admin.setdicount(.1);
-    	service=new OverAllDiscount(service,admin.getdicount());
-    	admin.addProvider(obj,service);
+//   	    Admin admin=new Admin();
+//    	Admin admin1=new Admin();
+    	
+    	Admin.getAdmin().setdicount(.1);
+    	service=new OverAllDiscount(service,Admin.getAdmin().getdicount());
+    	Admin.getAdmin().addProvider(obj,service);
     	System.out.println(service.cost());
     	
     	

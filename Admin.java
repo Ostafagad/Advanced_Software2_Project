@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Admin {
 	private ArrayList<ProviderCreator>providers;
 	private double discount;
-
-	public Admin() {
+	private static Admin admin=null;
+	private Admin() {
 		providers=new ArrayList<ProviderCreator>();
 		
 	}
@@ -24,9 +24,14 @@ public class Admin {
 	{
 		return this.discount;
 	}
-public void addService(Service s) {
+	public void addService(Service s) {
 		
 	  s.setCost(100);
+	}
+	public static Admin getAdmin() {
+		if(admin==null)
+			admin=new Admin();
+		return admin;
 	}
 //	public void print() {
 //		
