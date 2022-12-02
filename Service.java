@@ -1,4 +1,4 @@
-package myproject;
+
 
 public abstract class Service {
 	double cost;

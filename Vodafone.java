@@ -1,4 +1,3 @@
-package myproject;
 
 public class Vodafone extends Provider {
 	public Vodafone() {

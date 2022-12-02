@@ -1,4 +1,3 @@
-package myproject;
 
 public class Customer {
     private String user_name;
