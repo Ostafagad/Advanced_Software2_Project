@@ -4,10 +4,15 @@ public class Vodafone extends Provider {
 	public Vodafone() {
 		//System.out.println("vodafone Vodafone");
 		name="Vodafone";
-		fields.add("phone number");
-		fields.add("city");
-		amount=30;
+
 	}
+	public void setForm(String num,String city,double amount)
+	{
+		fields.add(num);
+		fields.add(city);
+		super.amount=amount;
+		}
+	
 
 	@Override
 	public void provideService(Service service) {
