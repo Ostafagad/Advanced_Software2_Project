@@ -18,12 +18,15 @@ public class Main {
 //        s.signUp(n);
 //        sin.signin("alaa","hkk");
     	Service service=new mobileRechargeService();
-    	service=new OverAllDiscount(service);
     	ProviderCreator obj=new VodafoneCreator();
     	obj.creatProvider();
     	Admin admin=new Admin();
+    	admin.setdicount(.1);
+    	service=new OverAllDiscount(service,admin.getdicount());
     	admin.addProvider(obj,service);
     	System.out.println(service.cost());
+    	
+    	
     	
     	//admin.print();
     }
