@@ -1,9 +1,10 @@
 
 public class Vodafone extends Provider {
 	private static Vodafone v=null;
+
 	
 	private Vodafone() {
-		//System.out.println("vodafone Vodafone");
+		System.out.println("vodafone Vodafone");
 		name="Vodafone";
 
 	}
