@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Vodafone extends Provider {
 	private static Vodafone v=null;
@@ -15,12 +16,11 @@ public class Vodafone extends Provider {
 		return v;
 	}
 	
-	public void setForm(String num,String city,double amount)
+	public void setForm(ArrayList <String>fields,double amount)
 	{
-		fields.add(num);
-		fields.add(city);
+		super.fields=fields;
 		super.amount=amount;
-		}
+	}
 	
 
 	@Override

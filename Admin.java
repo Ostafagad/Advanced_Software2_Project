@@ -10,9 +10,9 @@ public class Admin {
 		providers=new ArrayList<ProviderCreator>();
 		
 	}
-	public void addProvider(ProviderCreator obj,Service service) {
-		service.setCost(100);
-		 obj.creatProvider().addService(service);
+	public void addProvider(ProviderCreator obj) { //,Service service
+		//service.setCost(100);
+		 //obj.creatProvider().addService(service);
 		this.providers.add(obj);
 	}
 	
@@ -24,10 +24,10 @@ public class Admin {
 	{
 		return this.discount;
 	}
-	public void addService(Service s) {
-		
-	  s.setCost(100);
-	}
+//	public void addService(Service s) {
+//		
+//	  s.setCost(100);
+//	}
 	public static Admin getAdmin() {
 		if(admin==null)
 			admin=new Admin();

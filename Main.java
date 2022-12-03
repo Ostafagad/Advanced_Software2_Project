@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public class Main {
 
@@ -20,14 +20,20 @@ public class Main {
     	Service service=new mobileRechargeService();
     	ProviderCreator obj=new VodafoneCreator();
     	obj.creatProvider();
+    	
 //   	    Admin admin=new Admin();
 //    	Admin admin1=new Admin();
     	
     	Admin.getAdmin().setdicount(.1);
     	service=new OverAllDiscount(service,Admin.getAdmin().getdicount());
-    	Admin.getAdmin().addProvider(obj,service);
+    	//Admin.getAdmin().addProvider(obj,service);
+    	obj.creatProvider().addService(service);
+    	ArrayList<String> list=new ArrayList();
+    	list.add("name");
+    	list.add("city");
+    	obj.creatProvider().setForm(list, 1000);
     	System.out.println(service.cost());
-    	
+    	System.out.println(obj.creatProvider().get());
     	
     	
     	//admin.print();

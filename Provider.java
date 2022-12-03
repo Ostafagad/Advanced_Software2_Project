@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 
 public abstract class Provider {
-	protected double cost;
+	//protected double cost;
 	protected ArrayList<Service>services;
 	protected Form form;
 	protected String name;
@@ -18,8 +18,13 @@ public abstract class Provider {
 	protected void addService(Service service) {
 		
 		this.services.add(service);
+		service.setCost(get());
 	}
-	public void setCost(double cost) {
-		this.cost=cost;
+	public abstract void setForm(ArrayList <String>fields,double amount);
+//	public void setCost(double cost) {
+//		this.cost=cost;
+//	}
+	public double get() {
+		return this.amount;
 	}
 }
