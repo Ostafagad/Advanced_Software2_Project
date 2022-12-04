@@ -6,7 +6,7 @@ public abstract class Service {
 	public abstract double cost();
 	public abstract void setCost(double cost);
 	public abstract String getsername();
-	
-		
+	public abstract void getDiscountValue();
+	protected static double finalDiscount=0;	
 
 }

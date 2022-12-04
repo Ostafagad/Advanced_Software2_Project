@@ -24,6 +24,13 @@ public class OverAllDiscount extends DiscountDecorator {
 		return service.getsername();
 	}
 
+	@Override
+	public void getDiscountValue() {
+		
+		Service.finalDiscount+=this.discount*service.cost;
+		
+	}
+
 	
 
 	

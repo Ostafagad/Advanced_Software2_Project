@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Form {
 	protected ArrayList<String> fields;
 	protected double amount;
+	protected static boolean handler=false;
 	public Form(){
 		this.fields=new ArrayList<String>();
 		

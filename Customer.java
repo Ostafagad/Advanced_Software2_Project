@@ -24,7 +24,7 @@ public class Customer {
     	this.payment=payment;
     	payment.pay(cost);
     	this.transactions.add(new Transaction(Customer.custid,ser.getsername(),cost));
-    	
+    	Form.handler=true;
     }
     public void chooseProvider(ProviderCreator pc) {
     	this.pc=pc;
@@ -74,5 +74,14 @@ public class Customer {
 	   }
 	   
 	   return targetService;
+   }
+   public double checkDiscount() {
+	   return Service.finalDiscount;
+   }
+   public void handlerMethod() {
+	   if(Form.handler)
+		   System.out.println("Payment Process Is Successful.");
+	   else
+		   System.out.println("Payment Process Is Not Completed.");
    }
 }

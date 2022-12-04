@@ -18,5 +18,11 @@ public class mobileRechargeService extends Service {
 	public String getsername() {
 		return this.description;
 	}
+
+	@Override
+	public void getDiscountValue() {
+		
+		Service.finalDiscount+=0;
+	}
 	
 }

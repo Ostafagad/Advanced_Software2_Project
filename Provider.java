@@ -19,14 +19,10 @@ public abstract class Provider {
 	protected void addService(Service service) {
 		
 		this.services.add(service);
-		service.setCost(get());
+		service.setCost(amount);
 	}
 	public abstract void setForm(ArrayList <String>fields,double amount);
-//	public void setCost(double cost) {
-//		this.cost=cost;
-//	}
-	public double get() {
-		return this.amount;
-	}
+
+
 	
 }

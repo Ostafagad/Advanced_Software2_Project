@@ -28,6 +28,7 @@ public class Main {
           Admin.getAdmin().setdicount(.1); 
     	
     	service=new OverAllDiscount(service,Admin.getAdmin().getdicount());
+    	
     	//Admin.getAdmin().addProvider(obj,service);
     	obj.creatProvider().addService(service);
     	ArrayList<String> list=new ArrayList<String>();
@@ -55,8 +56,9 @@ public class Main {
        DataBase.getdb().print();
         Admin.getAdmin().acceptrefund();
         System.out.println(w.getbalance()) ;
-    	
+        service.getDiscountValue();
     	System.out.println(c.searchService("Mobile Recharge Service").getsername());
-        //c.searchService("Mobile Recharge Service");
+    	System.out.println(c.checkDiscount());
+    	c.handlerMethod();
     }
 }
