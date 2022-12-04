@@ -25,8 +25,7 @@ public class Vodafone extends Provider {
 
 	@Override
 	public void provideService(Service service) {
-	  
-		super.addService(service);
+	    		super.addService(service);
 		
 	}
 

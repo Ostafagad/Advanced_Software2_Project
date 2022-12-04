@@ -9,6 +9,7 @@ public abstract class Provider {
 	protected String name;
 	protected ArrayList <String>fields;
 	protected double amount;
+	
 	public Provider() {
 		services=new ArrayList<Service>();
 		fields=new ArrayList<String>();
@@ -27,4 +28,5 @@ public abstract class Provider {
 	public double get() {
 		return this.amount;
 	}
+	
 }

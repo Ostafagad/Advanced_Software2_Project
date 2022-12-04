@@ -5,7 +5,7 @@ public class Request {
 		// TODO Auto-generated constructor stub
 	}
 
-	 public void accept(){
+	  public void accept(){
 	       System.out.println("Document accepted");
 	   }
 	   public void decline(){

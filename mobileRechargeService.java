@@ -1,7 +1,8 @@
-
-
 public class mobileRechargeService extends Service {
 	
+	public mobileRechargeService () {
+		super.sername="Mobile Recharge Service";
+	}
 	
 	public double cost() {
 		

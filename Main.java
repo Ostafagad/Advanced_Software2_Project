@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
     	Scanner myObj = new Scanner(System.in);
     	 double amount = myObj.nextDouble();
+    	
 	// write your code here
 //        DataBase c=new DataBase();
 //        Account a=new Account();
@@ -24,8 +25,8 @@ public class Main {
     	obj.creatProvider();
     	
 
+          Admin.getAdmin().setdicount(.1); 
     	
-    	Admin.getAdmin().setdicount(.1);
     	service=new OverAllDiscount(service,Admin.getAdmin().getdicount());
     	//Admin.getAdmin().addProvider(obj,service);
     	obj.creatProvider().addService(service);
@@ -40,7 +41,7 @@ public class Main {
         Wallet w=new Wallet();
         c.pay(w, service.cost());
        System.out.println(w.getbalance()) ;
-        
+        c.getTransaction(1);
         
     	
     	
