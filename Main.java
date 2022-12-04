@@ -23,8 +23,7 @@ public class Main {
     	ProviderCreator obj=new VodafoneCreator();
     	obj.creatProvider();
     	
-//   	    Admin admin=new Admin();
-//    	Admin admin1=new Admin();
+
     	
     	Admin.getAdmin().setdicount(.1);
     	service=new OverAllDiscount(service,Admin.getAdmin().getdicount());
@@ -37,9 +36,14 @@ public class Main {
     	System.out.println(obj.creatProvider().get());
     	obj.creatProvider().addService(service);
     	System.out.println(service.cost());
-    
+        Customer c=new Customer();
+        Wallet w=new Wallet();
+        c.pay(w, service.cost());
+       System.out.println(w.getbalance()) ;
+        
+        
     	
     	
-    	//admin.print();
+    	
     }
 }

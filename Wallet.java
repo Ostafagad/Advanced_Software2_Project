@@ -1,6 +1,6 @@
 
 public class Wallet implements Payment {
-	private double balance=0.0;
+	private double balance=100000.0;
 
 	@Override
 	public void pay(double amount) {
@@ -12,6 +12,9 @@ public class Wallet implements Payment {
 	public void addbalance(double d)
 	{
 		balance+=d;
+	}
+	public double getbalance() {
+		return this.balance;
 	}
 	
 	
