@@ -18,4 +18,13 @@ public class OverAllDiscount extends DiscountDecorator {
 		
 	}
 
+	@Override
+	public String getsername() {
+		
+		return service.getsername()+" with overall discount";
+	}
+
+	
+
+	
 }

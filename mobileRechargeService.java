@@ -1,7 +1,7 @@
 public class mobileRechargeService extends Service {
 	
 	public mobileRechargeService () {
-		super.sername="Mobile Recharge Service";
+		super.description="Mobile Recharge Service";
 	}
 	
 	public double cost() {
@@ -14,5 +14,9 @@ public class mobileRechargeService extends Service {
 		super.cost=cost;
 		
 	}
-
+    
+	public String getsername() {
+		return super.description;
+	}
+	
 }

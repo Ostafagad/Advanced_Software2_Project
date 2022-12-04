@@ -7,26 +7,22 @@ public class Customer {
     private Payment payment;
     private ProviderCreator pc;
     private Service ser;
+    private double cost;
     private ArrayList<Transaction>transactions;
     private static int custid=0;
+    private BaseCommand bc;
     public Customer() {
     	
     	this.transactions= new ArrayList<Transaction>();
+    	
     	Customer.custid++;
     	
     }
     public void pay(Payment payment,double cost) {
-    	/*if(type=="Credit")
-    		payment= new CreditCard();
-    	else if(type=="Wallet")
-    		payment= new Wallet();
-    	else if(type=="Cashe")
-    		payment= new Cashe();
-    	return payment;
-    	*/
+    	this.cost=cost;
     	this.payment=payment;
     	payment.pay(cost);
-    	this.transactions.add(new Transaction(Customer.custid,this.ser.sername,cost));
+    	this.transactions.add(new Transaction(Customer.custid,ser.getsername(),cost));
     	
     }
     public void chooseProvider(ProviderCreator pc) {
@@ -36,14 +32,35 @@ public class Customer {
     public void chooseService(Service ser) {
     	this.ser=ser;
     }
-    public void getTransaction(int id) {
+    /*public void getTransaction(int id) {
  	   for(Transaction t: transactions)
  	   {  
  		   if(id==Transaction.transid) {
- 			   System.out.println(t);
+ 			   System.out.println(t.getservicename());
+ 			   System.out.println(Transaction.gettranid());
+ 			  System.out.println(t.getcustid());
+ 			  System.out.println(t.getamount());
  		   }
  		   
  	   }
-    }
-
+    }*/
+   public void refundRequest(int id) {
+	   for(Transaction t: transactions)
+ 	   {  
+ 		   if(id==Transaction.transid) {
+ 			  this.bc.execute(t);
+ 			  break;
+ 		   }
+ 	   }
+	   
+   }
+   public void setCommand(BaseCommand bc) {
+	   this.bc=bc;
+   }
+   public double getCustomerAmount() {
+	   return this.cost;
+   }
+   public Payment getPayment() {
+	   return this.payment;
+   }
 }

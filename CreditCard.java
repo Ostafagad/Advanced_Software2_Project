@@ -20,5 +20,10 @@ public class CreditCard implements Payment {
 	{
 		return password;
 	}
+	@Override
+	public void addfunds(double d) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

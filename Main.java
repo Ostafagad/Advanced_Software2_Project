@@ -34,15 +34,26 @@ public class Main {
     	list.add("name");
     	list.add("city");
     	obj.creatProvider().setForm(list, amount);
-    	System.out.println(obj.creatProvider().get());
+    	//System.out.println(obj.creatProvider().get());
     	obj.creatProvider().addService(service);
-    	System.out.println(service.cost());
+    	//System.out.println(service.cost());
         Customer c=new Customer();
+        c.chooseService(service);
         Wallet w=new Wallet();
         c.pay(w, service.cost());
-       System.out.println(w.getbalance()) ;
-        c.getTransaction(1);
-        
+       //System.out.println(w.getbalance()) ;
+       BaseCommand bc=new AskforRefund();
+       c.setCommand(bc);
+       c.refundRequest(1);
+       Request r=new Request();
+       r.setrefundCustomer(c);
+       RequestActionCommand rac=new ActionAccept(r);
+       RequestActionCommand rac2=new ActionDecline(r);
+       RefundMenu rm=new RefundMenu(rac,rac2);
+       Admin.getAdmin().setRefundMenu(rm);
+        Admin.getAdmin().print();
+        Admin.getAdmin().acceptrefund();
+        System.out.println(w.getbalance()) ;
     	
     	
     	

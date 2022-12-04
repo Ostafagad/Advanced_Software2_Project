@@ -9,5 +9,17 @@ public class Transaction {
 		this.sername=sername;
 		this.amountpaid=amountpaid;
 	}
-  
+	public static int gettranid() {
+		return transid;
+	}
+	public double getamount() {
+		return this.amountpaid;
+	}
+	
+	public int getcustid() {
+		return custid;
+	}
+	public String getservicename() {
+		return this.sername;
+	}
 }

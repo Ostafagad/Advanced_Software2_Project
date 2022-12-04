@@ -7,4 +7,10 @@ public class Cashe implements Payment {
 		System.out.println(amount);
 	}
 
+	@Override
+	public void addfunds(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
