@@ -26,3 +26,5 @@
 /SinglAdmin.class
 /VodafoneCustomer.class
 /Transaction.class
+/AskforRefund.class
+/BaseCommand.class

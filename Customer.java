@@ -11,6 +11,7 @@ public class Customer {
     private ArrayList<Transaction>transactions;
     private static int custid=0;
     private BaseCommand bc;
+    private Service targetService;
     public Customer() {
     	
     	this.transactions= new ArrayList<Transaction>();
@@ -62,5 +63,16 @@ public class Customer {
    }
    public Payment getPayment() {
 	   return this.payment;
+   }
+   
+   public Service searchService(String name) {
+	   
+	   for(Service service:pc.creatProvider().services) {
+		   if(service.getsername()==name)
+			   targetService=service;
+		   		//System.out.println(service.getsername());
+	   }
+	   
+	   return targetService;
    }
 }

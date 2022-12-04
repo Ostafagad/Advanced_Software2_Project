@@ -7,12 +7,12 @@ public class Request {
 	  public void accept(){
 	       System.out.println("Document accepted");
 	    
-	       Admin.getAdmin().refunds.remove();
+	       DataBase.getdb().refunds.remove();
 	       c.getPayment().addfunds(c.getCustomerAmount());
 	   }
 	   public void decline(){
 	       System.out.println("Document declined");
-	       Admin.getAdmin().refunds.remove();
+	       DataBase.getdb().refunds.remove();
 	   }
 	public void setrefundCustomer(Customer c) {
 		this.c=c;

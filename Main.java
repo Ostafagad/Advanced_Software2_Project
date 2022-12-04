@@ -38,6 +38,7 @@ public class Main {
     	obj.creatProvider().addService(service);
     	//System.out.println(service.cost());
         Customer c=new Customer();
+        c.chooseProvider(obj);
         c.chooseService(service);
         Wallet w=new Wallet();
         c.pay(w, service.cost());
@@ -51,11 +52,11 @@ public class Main {
        RequestActionCommand rac2=new ActionDecline(r);
        RefundMenu rm=new RefundMenu(rac,rac2);
        Admin.getAdmin().setRefundMenu(rm);
-        Admin.getAdmin().print();
+       DataBase.getdb().print();
         Admin.getAdmin().acceptrefund();
         System.out.println(w.getbalance()) ;
     	
-    	
-    	
+    	System.out.println(c.searchService("Mobile Recharge Service").getsername());
+        //c.searchService("Mobile Recharge Service");
     }
 }

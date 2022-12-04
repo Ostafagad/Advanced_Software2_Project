@@ -4,19 +4,22 @@ import java.util.ArrayList;
 
 
 public class Admin {
-	private ArrayList<ProviderCreator>providers;
+	//private ArrayList<ProviderCreator>providers;
 	private double discount;
 	private static Admin admin=null;
-	public Queue<Transaction>refunds;
-	private RefundMenu rm; 
+	//public Queue<Transaction>refunds;
+	private RefundMenu rm;
+//	private ProviderCreator p;
+//	private Transaction t;
 	private Admin() {
-		providers=new ArrayList<ProviderCreator>();
-		refunds= new  LinkedList<Transaction>();
+//		providers=new ArrayList<ProviderCreator>();
+//		refunds= new  LinkedList<Transaction>();
 		
 	}
 	public void addProvider(ProviderCreator obj) { //,Service service
 		
-		this.providers.add(obj);
+		//this.p=obj;
+		DataBase.getdb().addProviderToDB(obj);
 	}
 	public void setRefundMenu( RefundMenu rm) {
 		this.rm=rm;
@@ -45,13 +48,6 @@ public class Admin {
 			admin=new Admin();
 		return admin;
 	}
-	public void print() {
-		for(Transaction t:refunds) {
-			System.out.println(t.getamount());
-			System.out.println(t.getservicename());
-			System.out.println(Transaction.gettranid());
-			System.out.println(t.getcustid());
-		}
-	}
-
 }
+
+

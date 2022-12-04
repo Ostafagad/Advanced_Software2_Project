@@ -1,7 +1,7 @@
 public class mobileRechargeService extends Service {
 	
 	public mobileRechargeService () {
-		super.description="Mobile Recharge Service";
+		this.description="Mobile Recharge Service";
 	}
 	
 	public double cost() {
@@ -16,7 +16,7 @@ public class mobileRechargeService extends Service {
 	}
     
 	public String getsername() {
-		return super.description;
+		return this.description;
 	}
 	
 }
