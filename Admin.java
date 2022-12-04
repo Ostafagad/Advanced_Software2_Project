@@ -34,7 +34,11 @@ public class Admin {
 		
 	}
 	*/
-	public void setdicount(double d)
+	public void setoveralldiscount(double d)
+	{
+		this.discount=d;
+	}
+	public void setspecificdiscount(double d)
 	{
 		this.discount=d;
 	}

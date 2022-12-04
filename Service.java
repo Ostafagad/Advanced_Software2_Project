@@ -8,5 +8,7 @@ public abstract class Service {
 	public abstract String getsername();
 	public abstract void getDiscountValue();
 	protected static double finalDiscount=0;	
+	protected static double discount;
+
 
 }

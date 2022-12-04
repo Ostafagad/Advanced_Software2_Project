@@ -24,10 +24,17 @@ public class Main {
     	ProviderCreator obj=new VodafoneCreator();
     	obj.creatProvider();
     	
-
-          Admin.getAdmin().setdicount(.1); 
+    	  Admin.getAdmin().setspecificdiscount(.2);
+      	service=new SpecificDiscount(service,Admin.getAdmin().getdicount());
+      	
+          Admin.getAdmin().setoveralldiscount(.1); 
+         
     	
     	service=new OverAllDiscount(service,Admin.getAdmin().getdicount());
+//    	  Admin.getAdmin().setspecificdiscount(.2);
+//    	service=new SpecificDiscount(service,Admin.getAdmin().getdicount());
+    	
+    	
     	
     	//Admin.getAdmin().addProvider(obj,service);
     	obj.creatProvider().addService(service);
@@ -58,7 +65,7 @@ public class Main {
         System.out.println(w.getbalance()) ;
         service.getDiscountValue();
     	System.out.println(c.searchService("Mobile Recharge Service").getsername());
-    	System.out.println(c.checkDiscount());
+    	System.out.println( String.format("%.2f",c.checkDiscount()));
     	c.handlerMethod();
     }
 }
