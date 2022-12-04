@@ -1,8 +1,10 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+    	Scanner myObj = new Scanner(System.in);
+    	 double amount = myObj.nextDouble();
 	// write your code here
 //        DataBase c=new DataBase();
 //        Account a=new Account();
@@ -28,12 +30,14 @@ public class Main {
     	service=new OverAllDiscount(service,Admin.getAdmin().getdicount());
     	//Admin.getAdmin().addProvider(obj,service);
     	obj.creatProvider().addService(service);
-    	ArrayList<String> list=new ArrayList();
+    	ArrayList<String> list=new ArrayList<String>();
     	list.add("name");
     	list.add("city");
-    	obj.creatProvider().setForm(list, 1000);
-    	System.out.println(service.cost());
+    	obj.creatProvider().setForm(list, amount);
     	System.out.println(obj.creatProvider().get());
+    	obj.creatProvider().addService(service);
+    	System.out.println(service.cost());
+    
     	
     	
     	//admin.print();
