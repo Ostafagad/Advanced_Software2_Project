@@ -3,10 +3,10 @@ public class Transaction {
     private String sername; 
     private double amountpaid;
     public static int transid=0;
-	public Transaction(int custid,String sername,double amountpaid) {
+	public Transaction(int custid,double amountpaid) {
 		Transaction.transid++;
 		this.custid=custid;
-		this.sername=sername;
+		//this.sername=sername;
 		this.amountpaid=amountpaid;
 	}
 	public static int gettranid() {

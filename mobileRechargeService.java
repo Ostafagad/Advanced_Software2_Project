@@ -13,12 +13,12 @@ public class mobileRechargeService extends Service {
 
 	@Override
 	public void setCost(double cost) {
-		super.cost=cost;
+		this.cost=cost;
 		
 	}
     
 	public String getsername() {
-		return this.description;
+		return "Mobile Recharge Service";
 	}
 
 	@Override

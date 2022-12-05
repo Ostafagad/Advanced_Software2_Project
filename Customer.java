@@ -12,6 +12,7 @@ public class Customer {
     private static int custid=0;
     private BaseCommand bc;
     private Service targetService;
+    private Transaction t;
     public Customer() {
     	
     	this.transactions= new ArrayList<Transaction>();
@@ -23,7 +24,8 @@ public class Customer {
     	this.cost=cost;
     	this.payment=payment;
     	payment.pay(cost);
-    	this.transactions.add(new Transaction(Customer.custid,ser.getsername(),cost));
+    	this.t=new Transaction(Customer.custid,cost);
+    	this.transactions.add(t);
     	
     }
     public void chooseProvider(ProviderCreator pc) {

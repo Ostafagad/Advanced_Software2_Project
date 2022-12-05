@@ -9,7 +9,6 @@ public class Vodafone extends Provider {
 		name="Vodafone";
 		fields.add("phone number");
 		fields.add("City");
-		fields.add("amount of money");
 		
 	}
 	public static Vodafone getvodafone()
@@ -21,14 +20,14 @@ public class Vodafone extends Provider {
 	
 	public void setForm(ArrayList <String>inputfields,double amount)
 	{
-		super.inputfields=inputfields;
-		super.amount=amount;
+		this.inputfields=inputfields;
+		this.amount=amount;
 	}
 	
 
 	@Override
 	public void provideService(Service service) {
-	    		super.addService(service);
+	    		this.addService(service);
 		
 	}
 

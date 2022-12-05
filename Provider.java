@@ -29,6 +29,10 @@ public abstract class Provider {
 		   else
 			   System.out.println("Payment Process Is Not Completed.");
 	   }
+	 public void  setamount(double d)
+	 {
+		 this.amount=d;
+	 }
 
 	
 }
