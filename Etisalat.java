@@ -7,7 +7,10 @@ private static Etisalat v=null;
 	private Etisalat() {
 		System.out.println("Etisalat");
 		name="Etisalat";
-
+		fields.add("phone number");
+		fields.add("zip code");
+		fields.add("address");
+		fields.add("amount of money");
 	}
 	public static Etisalat getEtisalat()
 	{
@@ -16,9 +19,9 @@ private static Etisalat v=null;
 		return v;
 	}
 	
-	public void setForm(ArrayList <String>fields,double amount)
+	public void setForm(ArrayList <String>inputfields,double amount)
 	{
-		super.fields=fields;
+		super.inputfields=inputfields;
 		super.amount=amount;
 	}
 	

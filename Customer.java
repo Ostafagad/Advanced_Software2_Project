@@ -24,7 +24,7 @@ public class Customer {
     	this.payment=payment;
     	payment.pay(cost);
     	this.transactions.add(new Transaction(Customer.custid,ser.getsername(),cost));
-    	Form.handler=true;
+    	
     }
     public void chooseProvider(ProviderCreator pc) {
     	this.pc=pc;
@@ -33,18 +33,7 @@ public class Customer {
     public void chooseService(Service ser) {
     	this.ser=ser;
     }
-    /*public void getTransaction(int id) {
- 	   for(Transaction t: transactions)
- 	   {  
- 		   if(id==Transaction.transid) {
- 			   System.out.println(t.getservicename());
- 			   System.out.println(Transaction.gettranid());
- 			  System.out.println(t.getcustid());
- 			  System.out.println(t.getamount());
- 		   }
- 		   
- 	   }
-    }*/
+    
    public void refundRequest(int id) {
 	   for(Transaction t: transactions)
  	   {  
@@ -78,10 +67,5 @@ public class Customer {
    public double checkDiscount() {
 	   return Service.finalDiscount;
    }
-   public void handlerMethod() {
-	   if(Form.handler)
-		   System.out.println("Payment Process Is Successful.");
-	   else
-		   System.out.println("Payment Process Is Not Completed.");
-   }
+  
 }

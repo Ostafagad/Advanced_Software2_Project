@@ -4,68 +4,70 @@ public class Main {
 
     public static void main(String[] args) {
     	Scanner myObj = new Scanner(System.in);
-    	 double amount = myObj.nextDouble();
+    	String userName,password,email;
+    	DataBase DB=DataBase.getdb();
+    	int input,input2,input3,input4,admininput1,admininput2;
+    	Admin admin=Admin.getAdmin();
+    	 //Account a=new Account();
     	
-	// write your code here
-//        DataBase c=new DataBase();
-//        Account a=new Account();
-//        SignUp s=new SignUp(a,c);
-//        Signin sin=new Signin(a,c);
-//        a.addAccount("mena","1234","addsd");
-//        s.signUp(a);
-//        Account b=new Account();
-//        b.addAccount("alaa","1s4","agdssd");
-//        s.signUp(b);
-//        Account n=new Account();
-//        n.addAccount("alaa","1s4","agdssd");
-//        s.signUp(n);
-//        sin.signin("alaa","hkk");
-    	Service service=new mobileRechargeService();
-    	ProviderCreator obj=new VodafoneCreator();
-    	obj.creatProvider();
-    	
-    	  Admin.getAdmin().setspecificdiscount(.2);
-      	service=new SpecificDiscount(service,Admin.getAdmin().getdicount());
-      	
-          Admin.getAdmin().setoveralldiscount(.1); 
-         
-    	
-    	service=new OverAllDiscount(service,Admin.getAdmin().getdicount());
-//    	  Admin.getAdmin().setspecificdiscount(.2);
-//    	service=new SpecificDiscount(service,Admin.getAdmin().getdicount());
-    	
-    	
-    	
-    	//Admin.getAdmin().addProvider(obj,service);
-    	obj.creatProvider().addService(service);
-    	ArrayList<String> list=new ArrayList<String>();
-    	list.add("name");
-    	list.add("city");
-    	obj.creatProvider().setForm(list, amount);
-    	//System.out.println(obj.creatProvider().get());
-    	obj.creatProvider().addService(service);
-    	//System.out.println(service.cost());
-        Customer c=new Customer();
-        c.chooseProvider(obj);
-        c.chooseService(service);
-        Wallet w=new Wallet();
-        c.pay(w, service.cost());
-       //System.out.println(w.getbalance()) ;
-       BaseCommand bc=new AskforRefund();
-       c.setCommand(bc);
-       c.refundRequest(1);
-       Request r=new Request();
-       r.setrefundCustomer(c);
-       RequestActionCommand rac=new ActionAccept(r);
-       RequestActionCommand rac2=new ActionDecline(r);
-       RefundMenu rm=new RefundMenu(rac,rac2);
-       Admin.getAdmin().setRefundMenu(rm);
-       DataBase.getdb().print();
-        Admin.getAdmin().acceptrefund();
-        System.out.println(w.getbalance()) ;
-        service.getDiscountValue();
-    	System.out.println(c.searchService("Mobile Recharge Service").getsername());
-    	System.out.println( String.format("%.2f",c.checkDiscount()));
-    	c.handlerMethod();
-    }
-}
+    	do {
+    		
+    		System.out.println("Choose your option:");
+   		  System.out.println("1-Admin");
+   		  System.out.println("2-CUstomer");
+   		 
+   		  System.out.println("3-Exit");
+   		  input=myObj.nextInt();
+   		if(input==1) {
+			  do {
+				  System.out.println("1-Sign Up ");
+	        		 System.out.println("2-Sign In ");
+	        		 System.out.println("3-Exit ");
+	        		 System.out.println("Choose your option");
+	        		 admininput1=myObj.nextInt();
+	        		 //Admin Sign Up
+	        		 if(admininput1==1) {
+	        			 String adminusername,adminpassword;
+	        			 System.out.println("username");
+	        			 adminusername=myObj.next();
+	        			 System.out.println("password");
+	        			 adminpassword=myObj.next();
+	        			 admin.setAdminUserName(adminusername);
+	        			 admin.setAdminPassword(adminpassword);
+	        		 }
+	        		 
+	        		 else if(admininput1==2) {
+	        			 String usernameIn,passwordIn;
+	        			 System.out.println("username");
+	        			 usernameIn=myObj.next();
+	        			 System.out.println("password");
+	        			 passwordIn=myObj.next();
+	        			 if(usernameIn==DB.getAdminName() && usernameIn==DB.getAdminPassword()) {
+	        				 
+//	        				 do {
+//	        					 System.out.println("1- Add Provider");
+//	        					 System.out.println("2-Add Discount");
+//	        					 System.out.println("3-Exit");
+//	        					 System.out.println("Choose your Option");
+//	        					 admininput2=myObj.nextInt();
+//	        					 if(admininput2==1) {
+//	        						 
+//	        					 }
+//	        					 
+//	        				 }while(admininput2!=3);
+	        				 
+	        			 }
+	        		 
+	        		 }
+    	}while(admininput1!=3);
+   		}
+    	}while(input!=3);
+        
+   		}
+    			  
+    	} 
+			  
+			  
+			
+    
+

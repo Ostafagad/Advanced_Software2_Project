@@ -7,7 +7,11 @@ private static We v=null;
 	private We() {
 		System.out.println("We");
 		name="We";
-
+		fields.add("phone number");
+		fields.add("zip code");
+		fields.add("address");
+		fields.add("amount of money");
+		
 	}
 	public static We getWe()
 	{
@@ -16,9 +20,9 @@ private static We v=null;
 		return v;
 	}
 	
-	public void setForm(ArrayList <String>fields,double amount)
+	public void setForm(ArrayList <String>inputfields,double amount)
 	{
-		super.fields=fields;
+		super.inputfields=inputfields;
 		super.amount=amount;
 	}
 	

@@ -8,6 +8,8 @@ public class DataBase {
     private static DataBase database=null;
     private ArrayList<ProviderCreator>providers;
     public Queue<Transaction>refunds;
+    private String adminUserName;
+    private String adminPasswod;
     private DataBase()
     {
         this.accounts = new ArrayList<Account>();
@@ -35,4 +37,18 @@ public class DataBase {
 			System.out.println(t.getcustid());
 		}
 	}
+    public void setAdminUserName(String name) {
+		this.adminUserName=name;
+	}
+    public void setAdminPassword(String pass) {
+		this.adminPasswod=pass;
+	}
+    public String getAdminName() {
+    	return this.adminUserName;
+    }
+    
+    public String getAdminPassword() {
+    	return this.adminPasswod;
+    }
+    
 }

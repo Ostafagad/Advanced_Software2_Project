@@ -2,9 +2,12 @@
 public class CreditCard implements Payment {
 	private String cardnumber;
 	private String password;
+	private double cardBalance;
+
 	@Override
 	public void pay(double amount) {
-		// TODO Auto-generated method stub
+		cardBalance-=amount;
+		Form.handler=true;
 		
 	}
 	public void setcardinfo(String num,String pass)
@@ -23,7 +26,14 @@ public class CreditCard implements Payment {
 	@Override
 	public void addfunds(double d) {
 		// TODO Auto-generated method stub
-		
+		cardBalance+=d;
+	}
+	public double getCardBalance() {
+		return this.cardBalance;
+	}
+	
+	public void setCardBalance(double cardBalance) {
+		this.cardBalance=cardBalance;
 	}
 
 }

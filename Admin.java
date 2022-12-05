@@ -52,6 +52,12 @@ public class Admin {
 			admin=new Admin();
 		return admin;
 	}
+	public void setAdminUserName(String name) {
+		DataBase.getdb().setAdminUserName(name);
+	}
+	 public void setAdminPassword(String pass) {
+		 DataBase.getdb().setAdminPassword(pass);
+		}
 }
 
 

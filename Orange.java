@@ -7,7 +7,9 @@ private static Orange v=null;
 	private Orange() {
 		System.out.println("Orange");
 		name="Orange";
-
+		fields.add("phone number");
+		fields.add("City");
+		fields.add("amount of money");
 	}
 	public static Orange getOrange()
 	{
@@ -16,9 +18,9 @@ private static Orange v=null;
 		return v;
 	}
 	
-	public void setForm(ArrayList <String>fields,double amount)
+	public void setForm(ArrayList <String>inputfields,double amount)
 	{
-		super.fields=fields;
+		super.inputfields=inputfields;
 		super.amount=amount;
 	}
 	
