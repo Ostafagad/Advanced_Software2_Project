@@ -10,11 +10,17 @@ public class DataBase {
     public Queue<Transaction>refunds;
     private String adminUserName;
     private String adminPasswod;
+    protected ArrayList <String> services;
     private DataBase()
     {
         this.accounts = new ArrayList<Account>();
         providers=new ArrayList<ProviderCreator>();
 		refunds= new  LinkedList<Transaction>();
+		services=new ArrayList<String>();
+		services.add("Mobile Recharge Service");
+		services.add("Internet Payment Services");
+		services.add("Landline Services");
+		services.add("Donation");
     }
     public static DataBase getdb()
     {

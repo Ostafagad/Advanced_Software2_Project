@@ -39,29 +39,20 @@ public class Main {
    		  input=myObj.nextInt();
    		if(input==1) {
 			  do {
-				  System.out.println("1-Sign Up ");
-	        		 System.out.println("2-Sign In ");
+				  
+	        		 System.out.println("1-Sign In ");
 	        		 System.out.println("4-Exit ");
 	        		 System.out.println("Choose your option");
 	        		 admininput1=myObj.nextInt();
-	        		 //Admin Sign Up
-	        		 if(admininput1==1) {
-	        			 String adminusername,adminpassword;
-	        			 System.out.println("username");
-	        			 adminusername=myObj.next();
-	        			 System.out.println("password");
-	        			 adminpassword=myObj.next();
-	        			 admin.setAdminUserName(adminusername);
-	        			 admin.setAdminPassword(adminpassword);
-	        		 }
 	        		 
-	        		 else if(admininput1==2) {
+	        		 
+	        		  if(admininput1==1) {
 	        			 String usernameIn,passwordIn;
 	        			 System.out.println("username");
 	        			 usernameIn=myObj.next();
 	        			 System.out.println("password");
 	        			 passwordIn=myObj.next();
-	        			// if(usernameIn==DB.getAdminName() && usernameIn==DB.getAdminPassword()) {
+	        			
 	        				 
 	        				 do {
 	        					 System.out.println("1- Add Provider");
@@ -230,7 +221,7 @@ public class Main {
 	        		
 	        				 }while(admininput1!=4);
 	        				 
-	        			// }
+	        			
 	        		 
 	        		 }
     	}while(admininput1!=4);
@@ -256,15 +247,14 @@ public class Main {
 			 Account a=new Account();
 			 a.addAccount(userName, password, email);
 			 SignUp s=new SignUp(a,DB);
-		     //s.signUp(a);		     
+		   	     
 		 }
 		  else if(cust==2) {
-//			 System.out.println("User Name: ");
-//			 userName=myObj.next();
-//			 System.out.println("Password: ");
-//			 password=myObj.next();
-//			 Signin sin=new Signin(DB);
-//			 sin.signin(userName, password);
+			 System.out.println("User Name: ");
+			 userName=myObj.next();
+			 password=myObj.next();
+			 Signin sin1=new Signin(DB);
+			 sin1.signin(userName, password);
 			  
 			  
 			 System.out.println("Choose Provider");
@@ -296,20 +286,20 @@ public class Main {
 				fundswallet=pw;
 				Payment pc=new CreditCard();
 			   Payment pcsh=new Cashe();
-				 System.out.println("1-Search for A Service");
+			   System.out.println("1-Check Discount");
  				 System.out.println("2-Choose Service");
  				 System.out.println("3-Ask for Refund");
- 				 System.out.println("4-Check Discount");
+ 				System.out.println("4-Search for A Service");
  				 System.out.println("5-Add Funds to Wallet");
  				 System.out.println("6-Exit");
  				 System.out.println("Choose your option:");
  				 option = myObj.nextInt();
- 				 if(option==1)
+ 				 if(option==4)
  				 {
  					String serviceName;
 					 System.out.println("Enter Service Name:");
 					 serviceName=myObj.next();
-					 System.out.println(c.searchService(serviceName).getsername());					 
+					 System.out.println(c.searchService(serviceName));					 
  				 }
  				 else if(option==2)
  				 {
@@ -693,7 +683,7 @@ public class Main {
  					int in=myObj.nextInt();
  					 c.refundRequest(in);		 
  				 }
- 				else if(option==4) {
+ 				else if(option==1) {
  					System.out.println("Discount is:"+ c.checkDiscount());
  					
  				}

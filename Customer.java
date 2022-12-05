@@ -11,7 +11,7 @@ public class Customer {
     private ArrayList<Transaction>transactions;
     private static int custid=0;
     private BaseCommand bc;
-    private Service targetService;
+    private String targetService;
     private Transaction t;
     public Customer() {
     	
@@ -56,11 +56,11 @@ public class Customer {
 	   return this.payment;
    }
    
-   public Service searchService(String name) {
+   public String searchService(String name) {
 	   
-	   for(Service service:pc.creatProvider().services) {
-		   if(service.getsername()==name)
-			   targetService=service;
+	   for(String service:DataBase.getdb().services) {
+		   if(service==name)
+			   this.targetService=service;
 		   		//System.out.println(service.getsername());
 	   }
 	   

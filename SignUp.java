@@ -12,15 +12,14 @@ public class SignUp {
   {
       //this.account=a;
       this.arr=c;
-      if(!checkSignup(a)) {
+       
     	  //this.arr.accounts.add(a);
     	  this.arr.accounts.add(a);
 
-    	  System.out.println("Account has been created Successfully.Now you can Sign In.");
+    	 
          
-      }
-      else
-          System.out.println("This account already exits.");
+      
+      
       
   }
 //  public void signUp(Account a)

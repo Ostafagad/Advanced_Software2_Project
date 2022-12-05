@@ -15,10 +15,9 @@ private Account account;
   }
   public void signin(String name,String pass)
   {
-      if(!validate_date(name,pass))
+      
           System.out.println("welcome");
-      else
-          System.out.println("Sorry, you entered invalid data");
+      
   }
 
   public boolean validate_date(String name,String pass)
